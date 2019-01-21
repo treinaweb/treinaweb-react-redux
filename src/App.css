@@ -1,0 +1,35 @@
+body{
+  padding: 15px;
+}
+
+.tw-input{
+  padding: 5px;
+  font-size: 18px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.tw-check{
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.tw-btn{
+  cursor: pointer;
+  padding: 10px;
+  vertical-align: middle;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.todo-list{
+  margin: 15px;
+  padding: 0;
+}
+
+.todo-list-item{
+  list-style-type: none;
+  margin: 10px;
+}
