@@ -4,45 +4,16 @@ import './App.css';
 import ToDoList from './views/components/ToDoList';
 import NewToDoItem from './views/components/NewToDoItem';
 
-import TodoActions from './data/actions/TodoActions';
-import TodoStore from './data/stores/TodoStore';
-
+import * as TodoActions from './data/actions/TodoActions';
 import { connect } from 'react-redux';
 
-async function getTodoState(){
-  return {
-    todoList: await TodoStore.getAll()
-  }
-}
-
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      todoList: []
-    }
-
-    this._onChange = this._onChange.bind(this);
-    this._onChange();
-  }
-
-  componentDidMount(){
-    TodoStore.addChangeListener(this._onChange);  
-  }
-
-  componentWillUnmount(){
-    TodoStore.removeChangeListener(this._onChange);
-  }
-
-  async _onChange(){
-    this.setState(await getTodoState());
-  }
-
   render() {
-    const { state } = this;
+    const { props } = this,
+      { dispatch } = props;
     return (
       <div className="App">
-        <NewToDoItem onAdd={TodoActions.create} />
+        <NewToDoItem onAdd={(description) => { dispatch(TodoActions.create(description)) } } />
         <hr />
         <button className="tw-btn" onClick={TodoActions.clear} >Limpar</button>
         <hr />
