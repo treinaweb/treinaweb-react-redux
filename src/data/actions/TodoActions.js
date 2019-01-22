@@ -1,30 +1,28 @@
-import AppDispatcher from '../dispatcher/AppDispatcher';
-import TodoConstants from '../constants/TodoConstants';
+export const TODO_CREATE = 'TODO_CREATE';
+export const TODO_UPDATE = 'TODO_UPDATE';
+export const TODO_REMOVE = 'TODO_REMOVE';
+export const TODO_CLEAR = 'TODO_CLEAR';
 
-const TodoActions = {
-    create(description){
-        AppDispatcher.dispatch({
-            actionType: TodoConstants.TODO_CREATE,
-            description
-        })
-    },
-    update(item){
-        AppDispatcher.dispatch({
-            actionType: TodoConstants.TODO_UPDATE,
-            item
-        })
-    },
-    remove(id){
-        AppDispatcher.dispatch({
-            actionType: TodoConstants.TODO_REMOVE,
-            id
-        })
-    },
-    clear(){
-        AppDispatcher.dispatch({
-            actionType: TodoConstants.TODO_CLEAR
-        })
+export const create = (description) => {
+    return {
+        type: TODO_CREATE,
+        description
     }
 }
-
-export default TodoActions;
+export const update = (item) => {
+    return {
+        type: TODO_UPDATE,
+        item
+    }
+}
+export const remove = (id) => {
+    return {
+        type: TODO_REMOVE,
+        id
+    }
+}
+export const clear = () => {
+    return {
+        type: TODO_CLEAR
+    }
+}

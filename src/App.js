@@ -7,6 +7,8 @@ import NewToDoItem from './views/components/NewToDoItem';
 import TodoActions from './data/actions/TodoActions';
 import TodoStore from './data/stores/TodoStore';
 
+import { connect } from 'react-redux';
+
 async function getTodoState(){
   return {
     todoList: await TodoStore.getAll()
@@ -50,4 +52,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  todoList: state.todoList
+})
+
+export default connect(mapStateToProps)(App);
