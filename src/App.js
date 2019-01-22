@@ -17,14 +17,14 @@ class App extends Component {
         <hr />
         <button className="tw-btn" onClick={() => { dispatch(TodoActions.clear())} } >Limpar</button>
         <hr />
-        <ToDoList items={state.todoList} onRemove={(id) => { dispatch(TodoActions.remove(id))} } onUpdate={TodoActions.update} />
+        <ToDoList items={props.todoList} onRemove={(id) => { dispatch(TodoActions.remove(id))} } onUpdate={ (item) => {dispatch(TodoActions.update(item))} } />
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  todoList: state.todoList
+  todoList: state.TodoReducer
 })
 
 export default connect(mapStateToProps)(App);

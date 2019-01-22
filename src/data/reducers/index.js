@@ -1,4 +1,4 @@
-import { combineReducers } from 'flux';
+import { combineReducers } from 'redux';
 
 import TodoReducer from './TodoReducer';
 
