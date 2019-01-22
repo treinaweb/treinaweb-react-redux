@@ -15,6 +15,8 @@ const TodoReducer = (todoList = [], action) => {
             //return todoList.filter(item => item.id !== action.id);
             const itemIndex = todoList.findIndex(item => item.id == action.id);
             return [...todoList.slice(0, itemIndex), ...todoList.slice(itemIndex + 1)];
+        case TodoConstants.TODO_CLEAR:
+            return todoList.filter(item => !item.isChecked);
         default: return todoList;
     }
 }

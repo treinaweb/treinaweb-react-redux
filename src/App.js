@@ -15,7 +15,7 @@ class App extends Component {
       <div className="App">
         <NewToDoItem onAdd={(description) => { dispatch(TodoActions.create(description)) } } />
         <hr />
-        <button className="tw-btn" onClick={TodoActions.clear} >Limpar</button>
+        <button className="tw-btn" onClick={() => { dispatch(TodoActions.clear())} } >Limpar</button>
         <hr />
         <ToDoList items={state.todoList} onRemove={(id) => { dispatch(TodoActions.remove(id))} } onUpdate={TodoActions.update} />
       </div>
