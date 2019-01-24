@@ -29,9 +29,12 @@ export const create = (description) => {
     }
 }
 export const update = (item) => {
-    return {
-        type: TODO_UPDATE,
-        item
+    return async (dispatch) => {
+        await TodoService.update(item);
+        dispatch({
+            type: TODO_UPDATE,
+            item
+        })
     }
 }
 export const remove = (id) => {
