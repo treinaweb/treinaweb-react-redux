@@ -17,9 +17,15 @@ export const list = () => {
 }
 
 export const create = (description) => {
-    return {
-        type: TODO_CREATE,
-        description
+    return async (dispatch) => {
+        const newItem = await TodoService.create({
+            description,
+            isChecked: false
+        });
+        dispatch({
+            type: TODO_CREATE,
+            newItem
+        })
     }
 }
 export const update = (item) => {
