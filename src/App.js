@@ -8,6 +8,11 @@ import * as TodoActions from './data/actions/TodoActions';
 import { connect } from 'react-redux';
 
 class App extends Component {
+
+  componentDidMount(){
+    this.props.dispatch(TodoActions.list());
+  }
+
   render() {
     const { props } = this,
       { dispatch } = props;
