@@ -1,7 +1,7 @@
 import * as TodoActions from '../actions/TodoActions';
 import { TodoService } from '../services/TodoService';
 
-import { all, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import { all, put, takeEvery, takeLatest, select } from 'redux-saga/effects';
 
 
 function* listAll(){
@@ -33,10 +33,27 @@ function* watchRemove(){
     yield takeEvery(TodoActions.TODO_REMOVE, remove);
 }
 
+function* clear(){
+    const state = yield select(),
+        todoList = state.TodoReducer;
+
+    const newTodoList = todoList.filter(item => !item.isChecked),
+        toRemove = todoList.filter(item => item.isChecked);
+        
+    toRemove.forEach(item => TodoService.remove(item.id) )
+
+    yield put(TodoActions.listResponse(newTodoList))
+}
+
+function* watchClear(){
+    yield takeLatest(TodoActions.TODO_CLEAR, clear);
+}
+
 export default function* TodoSaga(){
     yield all([
         watchListAll(),
         watchCreate(),
-        watchRemove()
+        watchRemove(),
+        watchClear()
     ])
 }
