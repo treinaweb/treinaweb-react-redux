@@ -43,12 +43,9 @@ export const update = (item) => {
     }
 }
 export const remove = (id) => {
-    return async (dispatch) => {
-        await TodoService.remove(id);
-        dispatch({
-            type: TODO_REMOVE,
-            id
-        })
+    return {
+        type: TODO_REMOVE,
+        id
     }
 }
 export const clear = () => {

@@ -25,9 +25,18 @@ function* watchCreate(){
     yield takeEvery(TodoActions.TODO_CREATE, create)
 }
 
+function* remove({id}){
+    TodoService.remove(id);
+}
+
+function* watchRemove(){
+    yield takeEvery(TodoActions.TODO_REMOVE, remove);
+}
+
 export default function* TodoSaga(){
     yield all([
         watchListAll(),
-        watchCreate()
+        watchCreate(),
+        watchRemove()
     ])
 }
