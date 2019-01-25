@@ -49,11 +49,20 @@ function* watchClear(){
     yield takeLatest(TodoActions.TODO_CLEAR, clear);
 }
 
+function* update({item}){
+    TodoService.update(item);
+}
+
+function* watchUpdate(){
+    yield takeEvery(TodoActions.TODO_UPDATE, update)
+}
+
 export default function* TodoSaga(){
     yield all([
         watchListAll(),
         watchCreate(),
         watchRemove(),
-        watchClear()
+        watchClear(),
+        watchUpdate()
     ])
 }
