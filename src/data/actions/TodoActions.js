@@ -1,18 +1,22 @@
 import { TodoService } from '../services/TodoService';
 
 export const TODO_LIST = 'TODO_LIST';
+export const TODO_LIST_RESPONSE = 'TODO_LIST_RESPONSE';
 export const TODO_CREATE = 'TODO_CREATE';
 export const TODO_UPDATE = 'TODO_UPDATE';
 export const TODO_REMOVE = 'TODO_REMOVE';
 export const TODO_CLEAR = 'TODO_CLEAR';
 
 export const list = () => {
-    return async (dispatch) => {
-        const todoList = await TodoService.list();
-        dispatch({
-            type: TODO_LIST,
-            todoList
-        })
+    return {
+        type: TODO_LIST,
+    }
+}
+
+export const listResponse = (todoList) => {
+    return {
+        type: TODO_LIST_RESPONSE,
+        todoList
     }
 }
 
