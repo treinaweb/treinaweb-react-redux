@@ -1,5 +1,5 @@
 
-# TreinaWeb: curso ["React - Redux e Redux-Saga"](https://www.treinaweb.com.br/curso/)
+# TreinaWeb: curso ["React - Redux e Redux-Saga"](https://www.treinaweb.com.br/curso/react-redux-e-redux-saga)
 
 
 
