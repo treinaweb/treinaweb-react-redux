@@ -12,6 +12,7 @@
 [Download](https://github.com/treinaweb/treinaweb-react-redux/archive/aula-03-05.zip)    |  aula-03-05     | Apagando Itens |
 [Download](https://github.com/treinaweb/treinaweb-react-redux/archive/aula-03-06.zip)    |  aula-03-06     | Limpando Itens |
 [Download](https://github.com/treinaweb/treinaweb-react-redux/archive/aula-03-07.zip)    |  aula-03-07     | Atualizando Itens |
+[Download](https://github.com/treinaweb/treinaweb-react-redux/archive/aula-03-08.zip)    |  aula-03-08     | Utilizando Redux com Hooks |
 [Download](https://github.com/treinaweb/treinaweb-react-redux/archive/aula-04-01.zip)    |  aula-04-01     | Aplicando Redux Thunk em nosso projeto |
 [Download](https://github.com/treinaweb/treinaweb-react-redux/archive/aula-04-02.zip)    |  aula-04-02     | Listando Itens |
 [Download](https://github.com/treinaweb/treinaweb-react-redux/archive/aula-04-03.zip)    |  aula-04-03     | Criando Itens |
